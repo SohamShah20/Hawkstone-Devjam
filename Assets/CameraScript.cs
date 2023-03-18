@@ -38,6 +38,16 @@ public class CameraScript : MonoBehaviour
         {
             speed = 0;
         }
+
+        if ((player.transform.position.y - transform.position.y) > 10)
+        {
+            transform.position = new Vector3(transform.position.x, player.transform.position.y - 10, transform.position.z);
+        }
+        else if ((player.transform.position.y - transform.position.y) < 0)
+        {
+            transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
+        }
+
     }
 
     public void accel(float rate)
