@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public Rigidbody2D PlayerInfo;
+    public LogicScript logic;
     public float maxSpeed = 50;
     public float direction = 1;
     private float speed = 0;
@@ -13,9 +14,7 @@ public class PlayerScript : MonoBehaviour
     private bool doubleJump = false;
     public GameObject Bullet;
     private Animator anim;
-    private int bulletsFired;
-    private float timer = 0;
-    public float reloadTime;
+    public int playerHP;
 
     // Start is called before the first frame update
     void Start()
@@ -65,10 +64,10 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            if (grounded == true && bulletsFired < 6)
+            if (grounded == true && logic.bulletsLeft > 0)
             {
                 anim.SetTrigger("Shoot");
-                bulletsFired += 1;
+                logic.reduceBullets();
                 Instantiate(Bullet, transform.position, transform.rotation);
                 speed = 0;
             }       
@@ -77,18 +76,6 @@ public class PlayerScript : MonoBehaviour
         else
         {
             anim.SetTrigger("parry");
-        }
-
-
-        if (bulletsFired >= 6)
-        {
-            
-            timer += Time.deltaTime;
-            if (timer >= reloadTime)
-            {
-                bulletsFired = 0;
-                timer = 0;
-            }
         }
 
     }

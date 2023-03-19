@@ -370,6 +370,7 @@
 "Assets/BulletScript.cs"
 "Assets/CameraScript.cs"
 "Assets/Free Pixel Art Forest/Demo/MoveBackground.cs"
+"Assets/LogicScript.cs"
 "Assets/MainAsset/DemoScene/Scripts/CharSwitch.cs"
 "Assets/MainAsset/DemoScene/Scripts/Movement Scripts/PlayerScripts/Demoman_Move.cs"
 "Assets/MainAsset/DemoScene/Scripts/Movement Scripts/PlayerScripts/Heavy_Move.cs"
