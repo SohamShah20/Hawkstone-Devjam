@@ -14,7 +14,7 @@ public class LogicScript : MonoBehaviour
     private float timer = 0;
     public float reloadTime;
 
-    public void damageplayer(int health)
+    public void damagePlayer(int health)
     {
         playerHP -= health;
         playerHealth.text = playerHP.ToString();
