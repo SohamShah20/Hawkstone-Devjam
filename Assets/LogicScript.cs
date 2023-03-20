@@ -7,6 +7,7 @@ public class LogicScript : MonoBehaviour
 {
     public int playerHP = 100;
     public int bulletsLeft = 6;
+    public int skullCount = 0;
     public Text playerHealth;
     public Text bulletCount;
     public Text reloadText;
@@ -56,5 +57,10 @@ public class LogicScript : MonoBehaviour
         {
             reloadText.text = "";
         }
+    }
+
+    public void skullPlus()
+    {
+        skullCount += 1;
     }
 }

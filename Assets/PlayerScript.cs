@@ -31,8 +31,7 @@ public class PlayerScript : MonoBehaviour
             transform.position += Vector3.right * speed * Time.deltaTime;
             accel(accelRate);
             direction = 1;
-            anim.SetBool("walk", grounded);
-           
+            anim.SetBool("walk", grounded);           
         }
         if (Input.GetKey("a"))
         {
@@ -70,8 +69,7 @@ public class PlayerScript : MonoBehaviour
                 logic.reduceBullets();
                 Instantiate(Bullet, transform.position, transform.rotation);
                 speed = 0;
-            }       
-            
+            }           
         }
         else
         {

@@ -511,7 +511,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The Worst Game Ever
+  m_Text: Survival
 --- !u!222 &935163756
 CanvasRenderer:
   m_ObjectHideFlags: 0
