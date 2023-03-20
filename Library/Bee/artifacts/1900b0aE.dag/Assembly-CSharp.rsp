@@ -369,6 +369,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/BulletScript.cs"
 "Assets/CameraScript.cs"
+"Assets/Endmenu.cs"
 "Assets/EnemyScript.cs"
 "Assets/Free Pixel Art Forest/Demo/MoveBackground.cs"
 "Assets/LogicScript.cs"
@@ -381,6 +382,7 @@
 "Assets/MainAsset/DemoScene/Scripts/Movement Scripts/PlayerScripts/Spy_Move.cs"
 "Assets/MainAsset/DemoScene/Scripts/Movement.cs"
 "Assets/PlayerScript.cs"
+"Assets/retryMenu.cs"
 "Assets/StartMenu.cs"
 -langversion:9.0
 

@@ -14,8 +14,8 @@ public class EnemyScript : MonoBehaviour
     public float attackDelay;
     public float attackCooldown;
 
-    private float delayTimer;
-    private float cooldownTimer;
+    private float delayTimer = 0;
+    private float deathTime;
     private Animator anim;
 
 
@@ -53,29 +53,33 @@ public class EnemyScript : MonoBehaviour
             transform.localScale = new Vector3(50, 50, 50);
         }
 
-        if (playerDistanceX <= 20 && playerDistanceX >= -20)
+        if (playerDistanceX <= 20 && playerDistanceX >= -20) 
         {
             Attack();
-            
-            if (cooldownTimer > 1.25)
-             {
+            if (delayTimer == 0)
+            {
                 anim.SetTrigger("attck");
-                cooldownTimer = 0;
-             }
-             else
-             {
-                cooldownTimer += Time.deltaTime;
-             }     
+            }
         }
         else
         {
             anim.SetTrigger("sheathe");
         }
-
+        
         if (skelHealth <= 0)
         {
-            Destroy(gameObject);
-            logic.skullPlus();
+            if (deathTime == 0)
+            {
+                anim.SetTrigger("skeldeath");
+            }
+            deathTime += Time.deltaTime;
+            if (deathTime > 0.75)
+            {
+                Destroy(gameObject);
+                logic.skullPlus();
+            }
+            
+            
         }
     }
 
@@ -96,7 +100,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (playerDistanceX <= 25 && playerDistanceX >= -25 && playerDistanceY >= -20 && playerDistanceY <= 20)
             {
-                logic.damagePlayer(10);
+                logic.damagePlayer(25);
                 delayTimer = 0;
             }     
         }       

@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LogicScript : MonoBehaviour
 {
-    public int playerHP = 100;
+  
     public int bulletsLeft = 6;
     public int skullCount = 0;
     public Text playerHealth;
     public Text bulletCount;
     public Text reloadText;
+    public Text skelLeft;
+    public int playerHP = 100;
 
     private float timer = 0;
     public float reloadTime;
@@ -45,6 +48,16 @@ public class LogicScript : MonoBehaviour
         {
             reload(false);
         }
+
+        if (playerHP == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
+        if (skullCount == 9)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
     }
 
     public void reload(bool show)
@@ -57,10 +70,17 @@ public class LogicScript : MonoBehaviour
         {
             reloadText.text = "";
         }
+        
     }
 
     public void skullPlus()
+
     {
         skullCount += 1;
+        skelLeft.text = (9 - skullCount).ToString();
+    }
+    public void PlayerDeath()
+    {
+       
     }
 }

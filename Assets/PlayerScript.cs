@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerScript : MonoBehaviour
     private bool doubleJump = false;
     public GameObject Bullet;
     private Animator anim;
-    public int playerHP;
+    public int playerHP=100;
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +75,9 @@ public class PlayerScript : MonoBehaviour
         else
         {
             anim.SetTrigger("parry");
+
         }
+       
 
     }
 
@@ -105,5 +108,6 @@ public class PlayerScript : MonoBehaviour
             grounded = true;
             doubleJump = true;
         }
+
     }
 }
